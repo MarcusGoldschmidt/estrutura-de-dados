@@ -81,9 +81,18 @@ int removeFinal(TLista *lista){
     return 1;
 }
 
-int main(){
+void imprimirLista(TLista *lista){
+    TItem *pAux;
 
-        
+    pAux = lista->pPrimeiro;
+
+    while(pAux != NULL){
+        printf("Item: %d\n", pAux->info.chave);
+        pAux = pAux->pProx;
+    }
+}
+
+int main(){
 
     return 0;
 }
