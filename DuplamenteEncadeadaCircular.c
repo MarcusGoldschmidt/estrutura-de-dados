@@ -8,7 +8,7 @@ typedef struct TInfo{
 typedef struct TItem{
     TInfo info;
     struct TItem *pProx;
-    struct TItem *pAnte
+    struct TItem *pAnte;
 }TItem;
 
 typedef struct TLista{
@@ -17,7 +17,6 @@ typedef struct TLista{
 }TLista;
 
 int iniciarLista(TLista *lista){
-    
     lista->pPrimeiro = NULL;
     lista->pUltimo = NULL;
 
@@ -37,6 +36,8 @@ int inserirComeco(TLista *lista, TInfo info){
         return 0;
     }
 
+    pAux->info = info;
+
     pAux->pAnte = lista->pUltimo;
     pAux->pProx = lista->pPrimeiro;
 
@@ -53,6 +54,8 @@ int inserirFinal(TLista *lista, TInfo info){
     if(pAux == NULL){
         return 0;
     }
+
+    pAux->info = info;
 
     pAux->pAnte = lista->pUltimo;
     pAux->pProx = lista->pPrimeiro;

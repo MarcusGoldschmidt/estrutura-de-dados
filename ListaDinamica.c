@@ -16,7 +16,7 @@ typedef struct TLista{
 }TLista;
 
 int iniciarLista(TLista *lista){
-    lista->pPrimeiro = (TItem *) malloc(sizeof(TItem));
+    lista = (TItem *) malloc(sizeof(TLista));
     lista->pUltimo = lista->pPrimeiro;
     lista->pPrimeiro->pProx = NULL;
     return 1;
